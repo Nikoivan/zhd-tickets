@@ -1,0 +1,11 @@
+.Header {
+	background-image: url('./../../assets/images/bg-header-main-page.jpg');
+
+	&-Wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 7.4%;
+		padding: 11.4% 0 0 5.5%;
+	}
+}

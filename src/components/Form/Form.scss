@@ -1,0 +1,49 @@
+body .Form {
+	color: #ffffff;
+
+	&-Wrapper {
+		margin-top: 2%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&_type_end {
+			justify-content: flex-end;
+		}
+	}
+
+	&-Annotation {
+		padding-left: 10px;
+		display: block;
+		margin-top: 8%;
+		font-size: 30px;
+		font-weight: 300;
+	}
+
+	&-Input {
+		padding: 13px;
+		background-color: #ffffff;
+		width: 47%;
+		background-repeat: no-repeat;
+		background-position: right;
+		outline: none;
+		border-radius: 3px;
+		font-size: 18px;
+
+		&_type_direction {
+			background-image: url('../../assets/icons/location.svg');
+		}
+	}
+
+	&-Button {
+		padding: 5px;
+		min-width: 20px;
+		border-radius: 5px;
+		font-weight: 700;
+
+		&_type_action {
+			color: #292929;
+			background-color: #ffa800;
+		}
+	}
+}

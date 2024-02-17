@@ -1,0 +1,11 @@
+.Title {
+	color: #fff;
+	font-size: 72px;
+	font-weight: 300;
+	line-height: 1.15;
+
+	&_type_bold {
+		display: block;
+		font-weight: 700;
+	}
+}
