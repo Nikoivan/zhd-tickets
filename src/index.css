@@ -11,3 +11,18 @@ a {
 	color: #fff;
 	text-decoration: none;
 }
+
+:root {
+	--white: #ffffff;
+	--yellow: #ffa800;
+	--brown: #292929;
+	--noir: #2d2b2f;
+	--light-gray: #e5e5e5;
+	--dark-gray: #c4c4c4;
+	--red: #bf0000;
+
+	--m: 18px;
+	--l: 24px;
+	--xl: 30px;
+	--xxl: 36px;
+}

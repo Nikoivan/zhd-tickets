@@ -1,0 +1,55 @@
+body .DatePicker {
+	position: absolute;
+	top: 0;
+	z-index: 1301;
+
+	background-color: #fff;
+	color: #000;
+	width: 340px;
+	border-radius: 3px;
+	font-size: var(--l);
+
+	&-Header {
+		position: relative;
+		padding: 10px 25px 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 16%;
+		border-bottom: 1px solid var(--light-gray);
+	}
+
+	&-MonthTitle {
+		font-size: 32px;
+		font-weight: 500;
+		letter-spacing: 1px;
+	}
+
+	&-Calendar {
+		padding: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&-Previous {
+		position: absolute;
+		left: 25px;
+	}
+
+	&-Next {
+		position: absolute;
+		right: 25px;
+	}
+}
+
+.DatePicker::after {
+	position: absolute;
+	content: '';
+	right: 50%;
+	top: -3px;
+	transform: scaleY(1.7) rotate(225deg);
+	width: 15px;
+	height: 15px;
+	background: #fff;
+}

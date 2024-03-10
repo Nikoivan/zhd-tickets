@@ -1,0 +1,22 @@
+.HowItWorks {
+	padding: 3.2% 14.4% 5.7% 13%;
+	background-image: url('/src/assets/images/how-it-works-bg.jpg');
+
+	&-Title {
+		padding-top: 3px;
+		text-transform: uppercase;
+		font-size: var(--xxl);
+		font-weight: 500;
+		color: var(--white);
+	}
+
+	&-List {
+		margin-top: 7%;
+		padding-left: 0.5%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style-type: none;
+		gap: 10%;
+	}
+}

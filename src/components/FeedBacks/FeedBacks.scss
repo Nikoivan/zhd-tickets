@@ -1,0 +1,16 @@
+.FeedBacks {
+	padding: 7.6% 13% 6.4%;
+
+	&-Title {
+		font-size: var(--xxl);
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	&-List {
+		margin-top: 5%;
+		display: flex;
+		list-style-type: none;
+		gap: 6%;
+	}
+}

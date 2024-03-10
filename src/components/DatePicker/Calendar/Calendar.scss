@@ -1,0 +1,14 @@
+.Calendar {
+	padding: 3px 0 13px;
+
+	&-OtherMonth {
+		color: var(--light-gray);
+	}
+
+	&-Cell {
+		padding: 2.5px 9px;
+		text-align: end;
+		font-size: 24px;
+		font-weight: 700;
+	}
+}

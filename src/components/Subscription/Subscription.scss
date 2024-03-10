@@ -1,0 +1,21 @@
+body .Subscription {
+	margin-top: 2.3%;
+
+	&-Title {
+		font-size: var(--l);
+		font-weight: 500;
+	}
+
+	&-Input {
+		padding: 8px 25px;
+		width: 40.2%;
+		font-size: var(--l);
+	}
+
+	&-Button {
+		padding: 5px 11.5px;
+		height: 60px;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+}

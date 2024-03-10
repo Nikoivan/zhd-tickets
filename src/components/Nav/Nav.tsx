@@ -28,7 +28,9 @@ const Nav = () => (
 		<Logo />
 		<ul className='Nav-List'>
 			{navItems.map((item, id) => (
-				<li className='Nav-Item'>
+				<li
+					className='Nav-Item'
+					key={id}>
 					<NavLink
 						className='Nav-Link'
 						key={id}

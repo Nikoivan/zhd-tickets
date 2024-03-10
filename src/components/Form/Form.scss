@@ -2,8 +2,10 @@ body .Form {
 	color: #ffffff;
 
 	&-Wrapper {
-		margin-top: 2%;
+		position: relative;
+		margin-top: 7.8%;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
 
@@ -12,16 +14,21 @@ body .Form {
 		}
 	}
 
+	&-Item {
+		display: block;
+	}
+
 	&-Annotation {
+		width: 100%;
 		padding-left: 10px;
 		display: block;
-		margin-top: 8%;
 		font-size: 30px;
 		font-weight: 300;
 	}
 
 	&-Input {
-		padding: 13px;
+		padding: 13px 8px 13px 15px;
+		margin-top: 2.5%;
 		background-color: #ffffff;
 		width: 47%;
 		background-repeat: no-repeat;
@@ -29,21 +36,29 @@ body .Form {
 		outline: none;
 		border-radius: 3px;
 		font-size: 18px;
+		border-bottom: none;
+	}
 
-		&_type_direction {
-			background-image: url('../../assets/icons/location.svg');
-		}
+	&-Popover {
+		z-index: 1302;
+	}
+
+	&-ErrorInfo {
+		font-size: 20px;
+		color: var(--red);
 	}
 
 	&-Button {
-		padding: 5px;
 		min-width: 20px;
 		border-radius: 5px;
 		font-weight: 700;
 
 		&_type_action {
-			color: #292929;
-			background-color: #ffa800;
+			margin-top: 5.5%;
+			padding: 1.5% 8.7%;
+			font-size: 24px;
+			color: var(--brown);
+			background-color: var(--yellow);
 		}
 	}
 }

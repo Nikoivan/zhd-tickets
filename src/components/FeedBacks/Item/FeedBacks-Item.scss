@@ -1,0 +1,38 @@
+.FeedBacks {
+	&-Item {
+		display: flex;
+		gap: 3%;
+		max-width: 45%;
+	}
+
+	&-ContentWrap {
+		padding: 3.5% 1%;
+	}
+
+	&-AuthorName {
+		font-size: var(--l);
+		font-weight: 500;
+		padding: 0 2.7%;
+	}
+
+	&-ItemContentWrap {
+		display: flex;
+		margin-top: 2%;
+	}
+
+	&-ItemContent {
+		padding-top: 2.8%;
+		padding-left: 1%;
+		font-size: var(--m);
+		letter-spacing: 0;
+		line-height: 1.15;
+		max-width: 90%;
+		display: inline-block;
+		color: #928f94;
+
+		&_type_quotes {
+			margin-top: 2%;
+			font-weight: 500;
+		}
+	}
+}
