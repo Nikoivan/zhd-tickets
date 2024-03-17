@@ -1,16 +1,39 @@
 body .Form {
 	color: #ffffff;
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+	column-gap: 2%;
+
+	&_type_main {
+		flex-wrap: wrap;
+		column-gap: 5%;
+	}
 
 	&-Wrapper {
 		position: relative;
-		margin-top: 7.8%;
+		margin-top: 2%;
 		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-between;
+		column-gap: 5%;
+
+		&_type_main {
+			column-gap: 6.5%;
+		}
 
 		&_type_end {
+			margin-top: 7.1%;
+			display: flex;
 			justify-content: flex-end;
+		}
+
+		&_type_mainEnd {
+			margin-top: 13.2%;
+		}
+
+		&_type_entity {
+			flex-shrink: 0;
 		}
 	}
 
@@ -20,23 +43,21 @@ body .Form {
 
 	&-Annotation {
 		width: 100%;
-		padding-left: 10px;
+		margin-top: 3.5%;
 		display: block;
 		font-size: 30px;
 		font-weight: 300;
+
+		&_type_main {
+			margin-top: 8.5%;
+			padding-left: 1%;
+		}
 	}
 
 	&-Input {
 		padding: 13px 8px 13px 15px;
-		margin-top: 2.5%;
 		background-color: #ffffff;
-		width: 47%;
-		background-repeat: no-repeat;
-		background-position: right;
-		outline: none;
-		border-radius: 3px;
-		font-size: 18px;
-		border-bottom: none;
+		width: 345px;
 	}
 
 	&-Popover {
@@ -54,11 +75,19 @@ body .Form {
 		font-weight: 700;
 
 		&_type_action {
-			margin-top: 5.5%;
-			padding: 1.5% 8.7%;
+			padding: 1.4% 8.7%;
 			font-size: 24px;
 			color: var(--brown);
 			background-color: var(--yellow);
+			justify-self: flex-end;
+		}
+
+		&_type_swap {
+			position: absolute;
+			z-index: 1301;
+			top: 0;
+			right: calc(50% - 20px);
+			margin-top: 15px;
 		}
 	}
 }

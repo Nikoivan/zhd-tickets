@@ -1,5 +1,9 @@
 .Header-Widget {
-	width: 37.5%;
-	padding: 1% 1.3% 2.7%;
+	margin-top: 5.8%;
+	padding: 0 3% 3.9%;
 	background-color: #29292980;
+
+	&_type_main {
+		padding: 1.2% 1.5% 3.4%;
+	}
 }

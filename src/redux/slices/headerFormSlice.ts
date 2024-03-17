@@ -1,49 +1,86 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
+import { FullDate } from '../../services/calendar/getCalendarCells';
+import { CalendarScopeAction, ChangeAction } from '../actions/calendarFormActions';
+import { CalendarOpenScope } from '../../types/types';
+import selectedDateValidation, { selectedReturnDateValidation } from '../../services/validators/selectedDateValidator';
+import inputDateValidation from '../../services/validators/inputDateValidation';
+import { formatDateToInputValue } from '../../services/utils/dateFormat.util';
 
-type FocusState = {
-	dateInFocus: boolean;
-	returnDateInFocus: boolean;
+type DateValues = {
+	toDate: { value: string; date: FullDate | null };
+	returnDate: { value: string; date: FullDate | null };
 };
 
-export enum InFocusTypes {
-	DATE_TO = 'dateInFocus',
-	DATE_FROM = 'returnDateInFocus',
-}
+const calendarInitialScope = {
+	isOpen: false,
+	scope: null,
+};
+
+const initialValueDates = {
+	toDate: { value: '', date: null },
+	returnDate: { value: '', date: null },
+};
 
 export type HeaderFormState = {
-	from: string;
-	to: string;
-	date: string;
-	returnDate: string;
-	inFocus: FocusState;
-};
-
-const initFocus: FocusState = {
-	dateInFocus: false,
-	returnDateInFocus: false,
+	calendarScope: CalendarOpenScope;
+	valueDates: DateValues;
+	anchorEl?: HTMLButtonElement | HTMLInputElement;
+	popOverValue: string | null;
 };
 
 const initialState: HeaderFormState = {
-	from: '',
-	to: '',
-	date: '',
-	returnDate: '',
-	inFocus: initFocus,
+	calendarScope: calendarInitialScope,
+	valueDates: initialValueDates,
+	anchorEl: undefined,
+	popOverValue: null,
 };
 
 export const headerFormSlice = createSlice({
 	name: 'headerForm',
 	initialState,
 	reducers: {
-		switchPlaces: (state) => {
-			const from = state.from;
-
-			state.from = state.to;
-			state.to = from;
+		openCalendar: (state, action: CalendarScopeAction) => {
+			state.calendarScope = { isOpen: true, scope: action.payload.scope };
 		},
-		setDateInFocus: (state, action: PayloadAction<{ dateType: InFocusTypes }>) => {
-			state.inFocus = initFocus;
-			state.inFocus[action.payload.dateType] = true;
+		onSelect: (state, action) => {
+			const { event, fullDate } = action.payload;
+
+			state.anchorEl = event.currentTarget;
+			if (!state.calendarScope.scope) {
+				return;
+			}
+
+			if (!selectedDateValidation(fullDate)) {
+				state.popOverValue = 'Ошибка при выборе даты';
+
+				return;
+			}
+
+			if (
+				state.calendarScope.scope === 'returnDate' &&
+				!(!!state.valueDates.toDate.date && selectedReturnDateValidation(fullDate, state.valueDates.toDate.date))
+			) {
+				state.popOverValue = 'Обратная дата, не может быть ранее выбранной даты первичного направления';
+
+				return;
+			}
+
+			const newValue = {
+				[state.calendarScope.scope]: { value: `${fullDate.date}/${fullDate.month}/${fullDate.year}`, date: fullDate },
+			};
+
+			state.valueDates = { ...state.valueDates, ...newValue };
+
+			state.calendarScope = calendarInitialScope;
+		},
+		onChange: (state, action: ChangeAction) => {
+			const { name, value } = action.payload.event.target;
+			if (inputDateValidation(value)) {
+				state.valueDates = { ...state.valueDates, [name]: formatDateToInputValue(value) };
+			}
+		},
+		clearPopoverValue: (state) => {
+			state.popOverValue = null;
 		},
 	},
 });

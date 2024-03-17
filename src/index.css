@@ -17,6 +17,7 @@ a {
 	--yellow: #ffa800;
 	--brown: #292929;
 	--noir: #2d2b2f;
+	--bg-widgets: #3e3c41;
 	--light-gray: #e5e5e5;
 	--dark-gray: #c4c4c4;
 	--red: #bf0000;
@@ -25,4 +26,8 @@ a {
 	--l: 24px;
 	--xl: 30px;
 	--xxl: 36px;
+}
+
+.List {
+	list-style-type: none;
 }

@@ -1,10 +1,16 @@
+import { FC } from 'react';
+
 import Form from '../../Form/Form';
 
 import './Header-Widget.scss';
 
-const HeaderWidget = () => (
-	<div className='Header-Widget'>
-		<Form />
+export type PropsWithMainPageArg = {
+	isMainPage: boolean;
+};
+
+const HeaderWidget: FC<PropsWithMainPageArg> = ({ isMainPage }) => (
+	<div className={`Header-Widget${isMainPage ? ' Header-Widget_type_main' : ''}`}>
+		<Form isMainPage={isMainPage} />
 	</div>
 );
 

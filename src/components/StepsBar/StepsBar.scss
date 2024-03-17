@@ -1,0 +1,26 @@
+.StepsBar {
+	padding-right: 10.7%;
+	display: flex;
+	align-items: center;
+
+	color: #fff;
+	letter-spacing: 1px;
+	background-color: var(--bg-widgets);
+
+	&-Count {
+		margin-left: 2%;
+		padding: 2px 15px;
+		border: 3px solid #fff;
+		border-radius: 50%;
+		font-size: var(--xxl);
+	}
+
+	&-Count:first {
+		margin-left: 0;
+	}
+
+	&-ItemTitle {
+		margin-left: 25px;
+		font-size: var(--xl);
+	}
+}
